@@ -1,8 +1,25 @@
-function Form(){
+import { useState } from "react";
+function Form(props){
+
+    
+
+    //state - a way to store data in a component
+    const [name, setName] = useState("")
+    const [url, setUrl] = useState("")
+
 
     function handleClick(){
-        alert("Clicked!")
+        //reference the data inside of the input
+        props.submitFavLink({name, url})
+    }
 
+    function handleNameInputChange(event){
+        console.log(event.target.value)
+        setName(event.target.value)
+    }
+    function handleURLInputChange(event){
+        console.log(event.target.value)
+        setUrl(event.target.value)
     }
 
 
@@ -10,10 +27,10 @@ function Form(){
         <div>
             <form>
                 <label> Name </label>
-                <input type ="text" />
+                <input type ="text" onChange={handleNameInputChange} />
 
                 <label> URL </label>
-                <input type="text" />
+                <input type="text" onChange={handleURLInputChange}/>
 
             </form>
          <button onClick={handleClick}> Submit </button>

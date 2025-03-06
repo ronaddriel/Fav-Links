@@ -1,4 +1,4 @@
-function Table(){
+function Table(props){
 
     return(
         <table>
@@ -9,6 +9,22 @@ function Table(){
                 </tr>
             </thead>
 
+            <tbody>
+                <tr>
+                    <td>Google</td>
+                    <td>Google.com</td>
+                </tr>
+                <tr>
+                    <td>Github</td>
+                    <td>Github.com</td>
+                </tr>
+
+                <tr>
+                    <td>{props.data.name}</td>
+                    <td>{props.data.url}</td>
+                </tr>
+
+            </tbody>
 
 
         </table>
