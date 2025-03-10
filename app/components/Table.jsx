@@ -8,24 +8,20 @@ function Table(props){
                     <th>URL</th>
                 </tr>
             </thead>
-
             <tbody>
-                <tr>
-                    <td>Google</td>
-                    <td>Google.com</td>
+            {
+                props.data.map((favlink, index)=>{
+                    
+               
+                return(<tr key={index}>
+                    <td>{favlink.name}</td>
+                    <td>{favlink.url}</td>
                 </tr>
-                <tr>
-                    <td>Github</td>
-                    <td>Github.com</td>
-                </tr>
+                )
 
-                <tr>
-                    <td>{props.data.name}</td>
-                    <td>{props.data.url}</td>
-                </tr>
-
+            })
+        }
             </tbody>
-
 
         </table>
     )
